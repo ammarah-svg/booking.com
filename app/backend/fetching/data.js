@@ -1,11 +1,9 @@
-import {User} from '../models/userModel'
+import React from 'react'
 
-
-
-
-export const getData = async()=>{
-
-     const myUsers = await User.find();
-     console.log(myUsers)
-    return myUsers;
+const data = () => {
+  return (
+    <div>data</div>
+  )
 }
+
+export default data

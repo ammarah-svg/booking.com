@@ -26,25 +26,27 @@ export const addUser = async (formData) => {
     const createdUser = await User.create({ name, email, password: hashed });
        if(createdUser) {
         console.log('user created successfully')
-        redirect('/')
+      
        }}
 
 };
 
-
-
-export const signIn = async (email, password) => {
-
-    const findUser = await User.findOne({ email });
-    if (!findUser) {
-      throw new Error("Invalid Email");
-    }else{
-        console.log('login successful')
-        redirect("/");
-
-    }
-
+export const authenticate = async (email, password) => {
+  await connect();
+  const findUser =  User.findOne({ email });
+  if (!findUser) {
+    throw new Error("Invalid Email");
+  } else {
+    if (password == findUser.password) {
+      console.log('login successful')
+        } 
+        else {
+          throw new Error("Password does not match!");
+        }
+  }
+    
 }
+
 
 
 
