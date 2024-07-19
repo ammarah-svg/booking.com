@@ -12,7 +12,7 @@ const Nav = () => {
     <div className="flex items-center  justify-between p-5">
     <h2 className="text-lg font-bold">Booking.com</h2>
     <div className="flex gap-3">
-     <Link href="/login" className="bg-white text-black px-6 py-1 rounded-md border border-gray-300">Log in</Link>
+     <Link href="/signin" className="bg-white text-black px-6 py-1 rounded-md border border-gray-300">Log in</Link>
      <Link href="/signup" className="bg-white text-black px-6 py-1 rounded-md border border-gray-300">Sign up</Link> </div>
      </div>
 

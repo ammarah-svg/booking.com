@@ -16,6 +16,20 @@ export const addUser = async (formData) => {
     const hashed = await bcrypt.hash(password, salt);
 
     const createdUser = await User.create({ name, email, password: hashed });
- 
+       if(createdUser) {
+        console.log('user created successfully')
+       }
 }
+
+
+
+export const authenticate = async (formData) => {
+  const { email, password } = Object.fromEntries(formData);
+  try {
+      await signIn("credentials",{email,password})
+  } catch (error) {
+      throw new Error('Invalid Credentials')
+  }
+}
+
 
