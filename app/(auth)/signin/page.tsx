@@ -1,7 +1,7 @@
 import React from 'react'
 import NextAuth from "next-auth";
 import Button from '@/app/components/user/Button'
-import {authenticate} from '@/app/libs/actions'
+import {authenticate} from '@/app/backend/actions'
 
 const signIn = async() => {
    

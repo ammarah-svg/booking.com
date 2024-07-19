@@ -1,8 +1,6 @@
 import React from 'react'
 import Button from '@/app/components/user/Button'
-import {addUser} from '@/app/libs/actions'
-
-
+import {addUser} from '@/app/backend/actions'
 
 
 const SignUp = () => {
@@ -18,7 +16,7 @@ const SignUp = () => {
     </div>
 
 <div className="body-section w-[30%] mt-6 pt-8 font-bolder text-2xl mx-auto">
-    <h3 className='text-center'>Sign in or create an account</h3>
+    <h3 className='text-center'>Create an account</h3>
 
 
 
