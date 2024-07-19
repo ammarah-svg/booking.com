@@ -3,7 +3,7 @@
 import { User } from "./models/userModel";
 import bcrypt from 'bcrypt';
 import { connect } from './connectDB'
-import { redirect } from "next";
+import { redirect } from 'next/dist/server/api-utils';
 
 
 
