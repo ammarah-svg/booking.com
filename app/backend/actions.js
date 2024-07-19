@@ -3,19 +3,17 @@
 import { User } from "./models/userModel";
 import bcrypt from 'bcrypt';
 import { connect } from './connectDB'
-import { redirect } from 'next/dist/server/api-utils';
+import { redirect } from "next/navigation";
 
 
-
+//to sign up//
 
 export const addUser = async (formData) => {
   const { name, email, password } = Object.fromEntries(formData);
-
-
   await connect();
 
   const isUserPresent = await User.findOne({ email })
-  // if user is present, throw an error
+  
   if (isUserPresent) {
       res.status(400);
       throw new Error('User already exists')
@@ -28,8 +26,11 @@ export const addUser = async (formData) => {
         console.log('user created successfully')
       
        }}
+       redirect('/')
 
 };
+
+//for sign in//
 
 export const authenticate = async (email, password) => {
   await connect();
@@ -44,6 +45,7 @@ export const authenticate = async (email, password) => {
           throw new Error("Password does not match!");
         }
   }
+  redirect('/')
     
 }
 
